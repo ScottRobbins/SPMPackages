@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "app",
+    name: "SPMPackages",
     dependencies: [
         .package(url: "https://github.com/vapor/vapor.git", from: "3.0.0"),
     ],
@@ -12,13 +12,13 @@ let package = Package(
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
-            name: "app",
+            name: "App",
             dependencies: ["Vapor"]),
         .target(
-            name: "run",
-            dependencies: ["app"]),
+            name: "Run",
+            dependencies: ["App"]),
         .testTarget(
             name: "appTests",
-            dependencies: ["app"]),
+            dependencies: ["App"]),
     ]
 )
